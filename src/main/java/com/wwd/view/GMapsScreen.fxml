@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import com.lynden.gmapsfx.*?>
+
+<!--suppress JavaFxUnresolvedFxIdReference, JavaFxDefaultTag -->
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.wwd.controller.GMapsController">
+    <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+          AnchorPane.topAnchor="0.0">
+        <children>
+            <HBox>
+                <TextField fx:id="latField" promptText="Latitude"
+                           onKeyPressed="#handleKeyPressed"/>
+                <TextField fx:id="longField" promptText="Longitude"
+                           onKeyPressed="#handleKeyPressed"/>
+                <Button fx:id="searchButton" mnemonicParsing="false"
+                        text="Search" onAction="#searchPressed"
+                        minWidth="70"/>
+                <Label fx:id="errorLabel"
+                       text="Invalid latitude and longitude fields"
+                       visible="false" textAlignment="CENTER"
+                       textFill="#ee3b0a"/>
+            </HBox>
+        </children>
+        <GoogleMapView fx:id="mapView" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0"
+                       AnchorPane.rightAnchor="0.0"/>
+    </VBox>
+</AnchorPane>
